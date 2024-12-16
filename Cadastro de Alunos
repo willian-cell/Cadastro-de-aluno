@@ -1,0 +1,60 @@
+alunos = []
+
+while True:
+  print("Menu da escola")
+  print("1. Cadastrar aluno")
+  print("2. Listar alunos")
+  print("3. Sair)")
+
+  opcao = input("Escolha uma opção: ")
+
+  if opcao == "1":
+
+    nome = input("Digite o nome do aluno: ")
+    alunos.append(nome)
+    print("Aluno cadastrado com sucesso!")
+
+    idade = int(input("Digite sua idade: "))
+    nota1 = float(input("Digite sua nota 1: "))
+    nota2 = float(input("Digite sua nota 2: "))
+    nota3 = float(input("Digite sua nota 3: "))
+
+    nota = (nota1 + nota2 + nota3) / 3
+    notas = [nota1, nota2, nota3]
+    print("________________\n")
+
+    print(f"Seu nome é: {nome}")
+    print(f"Sua idade é: {idade}")
+    print(f"suas notas foram respectivamente: {notas}")
+    print(f"Sua nota média é: {nota}")
+    print("________________\n")
+
+    if nota >= 7:
+        print(f"{nome} foi APROVADO!")
+    if nota <7 and nota >4:
+        print(f"{nome} está de RECULPERAÇÃO!")
+    if nota < 4:
+        print(f"{nome} está REPROVADO!")
+
+    print("________________\n")
+
+  elif opcao == "2":
+        print("Lista de alunos:")
+        for aluno in alunos:
+          print(aluno)
+        for alunos in notas:
+          if notas >= 7:
+            print(f" {alunos}, Aprovado")
+          if notas < 7 and notas > 4:
+            print(f" {alunos}, Recuperação")
+          if notas < 4:
+            print(f"{alunos}, Reprovado")
+
+          print("_______________\n")
+        if not alunos:
+          print("Nenhum aluno cadastrado.")
+
+  elif opcao == "3":
+        break
+
+
